@@ -1,0 +1,36 @@
+{
+  "name": "jpex-folder",
+  "version": "2.0.0-alpha.0",
+  "description": "Auto-register Jpex factories",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jasmine",
+    "coverage": "nyc jasmine",
+    "lcov-fix": "node node_modules/jpex-build-tools/lcov-fix",
+    "travis-prepublish": "node node_modules/jpex-build-tools/travis-prepublish",
+    "lint": "eslint ./src --fix",
+    "publish-please": "publish-please",
+    "prepublish": "publish-please guard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackmellis/jpex-folder.git"
+  },
+  "author": "Jack Ellis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackmellis/jpex-folder/issues"
+  },
+  "homepage": "https://github.com/jackmellis/jpex-folder#readme",
+  "dependencies": {
+    "glob": "^7.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.16.0",
+    "jasmine": "^2.5.3",
+    "jpex": "^2.0.0-alpha.0",
+    "jpex-build-tools": "git+https://github.com/jackmellis/jpex-build-tools.git",
+    "nyc": "^10.1.2",
+    "publish-please": "^2.2.0"
+  }
+}

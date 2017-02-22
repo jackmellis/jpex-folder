@@ -3,18 +3,18 @@ branches :
     - master
 language : node_js
 node_js :
-  - 4
+  - 6
 install :
-  - cd jpex-folder
   - npm install
 
-  - npm install jasmine-node -g
   - npm install codeclimate-test-reporter -g
 script :
-  - jasmine-node ../spec/jpex-folder
+  - npm run lint
+  - npm test
+  - npm run coverage
 
-  - istanbul cover --include-all-sources jasmine-node ../spec/jpex-folder
-  - cd ../
-  - node lcov-fix
+  - npm run lcov-fix
 after_script :
   - codeclimate-test-reporter < lcov.info
+  - npm run travis-prepublish
+  - npm run publish-please
