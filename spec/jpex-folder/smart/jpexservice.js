@@ -1,5 +1,4 @@
-var grequire = require('../../../jpex-folder/grequire');
-var jpex = grequire('node_modules/jpex');
+var jpex = require('jpex');
 
 module.exports = jpex.extend({
   constructor : function(){

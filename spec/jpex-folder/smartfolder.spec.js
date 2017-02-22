@@ -56,7 +56,7 @@ describe('Base Class - Dependency Injection', function(){
       });
       it('should accept a custom name transformer', function(){
         var expected = ['index', 'first', 'second', 'first', 'second', 'constant', 'factory',
-                        'service', 'enums', 'iinterface', 'jpexservice'];
+                        'service', 'jpexservice'];
 
         First.register.folder('./spec/jpex-folder/smart', {
           pattern : '**/*.{js,json}',
