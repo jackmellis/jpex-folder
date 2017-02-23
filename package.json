@@ -32,5 +32,8 @@
     "jpex-build-tools": "git+https://github.com/jackmellis/jpex-build-tools.git",
     "nyc": "^10.1.2",
     "publish-please": "^2.2.0"
+  },
+  "peerDependencies" : {
+    "jpex" : "^2.0.0"
   }
 }
