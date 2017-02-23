@@ -28,7 +28,7 @@
   "devDependencies": {
     "eslint": "^3.16.0",
     "jasmine": "^2.5.3",
-    "jpex": "^2.0.0-alpha.0",
+    "jpex": "git+https://github.com/jackmellis/jpex.git#2.x",
     "jpex-build-tools": "git+https://github.com/jackmellis/jpex-build-tools.git",
     "nyc": "^10.1.2",
     "publish-please": "^2.2.0"
