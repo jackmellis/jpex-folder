@@ -3,20 +3,20 @@ const path = require('path');
 
 exports.name = 'jpex-folder';
 exports.install = function ({Jpex, on}) {
-  Jpex.register.folder = folder.bind(Jpex, {});
+    Jpex.register.folder = folder.bind(Jpex, {});
 
-  on('factories', function ({register, options, Class}) {
-      register('folder', folder.bind(Class, options));
-  });
-  on('privateProperties', function ({options, apply}) {
-      apply({
-          $$dependencies : {
-              get : function () {
-                  return (options.dependencies || []).slice();
-              }
-          }
-      });
-  });
+    on('factories', function ({register, options, Class}) {
+        register('folder', folder.bind(Class, options));
+    });
+    on('privateProperties', function ({options, apply}) {
+        apply({
+            $$dependencies : {
+                get : function () {
+                    return (options.dependencies || []).slice();
+                }
+            }
+        });
+    });
 };
 
 function folder(jpexConfig, target, options) {
