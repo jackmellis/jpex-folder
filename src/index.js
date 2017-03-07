@@ -12,7 +12,22 @@ exports.install = function ({Jpex, on}) {
         apply({
             $$dependencies : {
                 get : function () {
-                    return (options.dependencies || []).slice();
+                    return [].concat(options.dependencies || []).map(function (key) {
+                        if (typeof key === 'object'){
+                            key = Object.assign({}, key);
+                            Object.keys(key).forEach(function (key2) {
+                                if (key2[0] !== '_'){
+                                    key['_' + key2 + '_'] = key[key2];
+                                    delete key[key2];
+                                }
+                            });
+                            return key;
+                        }else if (key[0] !== '_'){
+                            return '_' + key + '_';
+                        }else{
+                            return key;
+                        }
+                    });
                 }
             }
         });
